@@ -6,18 +6,18 @@ const router = express.Router();
 router.get("/", async (req, res) => {
   try {
     const book = await Book.find().lean().exec();
-    res.status(200).send(comment);
+    res.status(200).send(book);
   } catch (error) {
-    console.log(comment);
+    console.log(error);
   }
 });
 
 router.post("/", async (req, res) => {
   try {
-    const comment = await Book.create(req.body);
-    res.status(200).send(comment);
+    const book = await Book.create(req.body);
+    res.status(200).send(book);
   } catch (error) {
-    console.log(comment);
+    console.log(error);
   }
 });
 
